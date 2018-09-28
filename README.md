@@ -2,12 +2,11 @@
 
 ## Overview
 
-Provided is a docker based environment that uses [docker-compose](https://docs.docker.com/compose/)) which contains a mysql
-to bring up a database and a fake api service using nginx.
+Provided is a docker based environment that uses [docker-compose](https://docs.docker.com/compose/) which contains a mysql container and an nginx container.
 
 ## Interview Task
 
-Your task is to bootstrap an api service which implements a `/dashboards` endpoint which
+Your task is to build an api service which implements a `/dashboards` endpoint which
 returns a list of dashboard objects retrieved from the mysql database provided.
 
 The expected format of the dashboard object should be roughly
@@ -38,11 +37,12 @@ Running `./check_prerequisites.sh` will check what software you need to install 
 
 ### Running the environment
 
-To run the environment, run `docker-compose up --force-recreate` in the terminal. This will bring up the terminal and the "fake" api
-service.
+To run the environment, run `docker-compose up --force-recreate` in the terminal. This will bring up the terminal and the "fake" api service.
 
 Once the environment is running, in another shell you should be able to run `./smoke_tests.sh` which will test that the
 service returns at least one dashboard and it has the correct properties.
+
+The api is available on `http://localhost/` and the mysql server is available on mysql:3306. These ports can be easily changed in the docker-compose.yml file, however be aware that the smoke_tests.sh file will also need updating.
 
 ### Working with the database
 
