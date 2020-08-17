@@ -3,11 +3,14 @@ version: "3.5"
 services:
   mysql-db:
     image: mysql:5
+    command: --default-authentication-plugin=mysql_native_password
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: test123
       MYSQL_DATABASE: definitions
+      MYSQL_USER: greg
+      MYSQL_PASSWORD: egu
     volumes:
       - ./database:/docker-entrypoint-initdb.d
     healthcheck:
@@ -16,9 +19,17 @@ services:
       retries: 50
 
   api:
-    image: nginx:latest
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+    image: node:12
+    build: ./api
+    depends_on:
+      - mysql-db
+    links:
+      - "mysql-db:mysql"
     ports:
-      - 80:80
+      - 8080:8080
       - 443:443
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: test123
+      MYSQL_DATABASE: definitions
+      PORT: 8080

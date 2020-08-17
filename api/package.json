@@ -1,0 +1,23 @@
+{
+  "name": "anaplan-byoi",
+  "version": "1.0.0",
+  "description": "Pair programming exercise for anaplan",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "test",
+    "senior",
+    "developer"
+  ],
+  "author": "Emmanuel Enwenede <emmanuel@blueeel.co.uk>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4"
+  }
+}
