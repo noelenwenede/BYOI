@@ -53,3 +53,4 @@ To apply any script changes when the database is already running you will need t
 and destroy it. Running `docker-compose down` will stop the environment and destroy the containers for you, the next
 time you bring the environment up the containers will be created again.
 # BYOI
+# BYOI
