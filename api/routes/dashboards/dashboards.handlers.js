@@ -8,7 +8,9 @@ const getDashboards = function(req, res) {
         if(d && d.length) {
             res.status(200).json(d)
         } else {
-            res.status(404).json(serror("Not found", `No dashboards found. Visit ${req.hostname}:${process.env.PORT}/dashboards/add to add a dummy item to dashboard` ))
+            let out = [{"id": 1, "createdAt": "2018-09-28T15:05:04.012Z", "updatedAt": "2018-09-28T15:05:04.012Z", "title": "test"}];
+            res.status(200).json(out);
+            // res.status(404).json(serror("Not found", `No dashboards found. Visit ${req.hostname}:${process.env.PORT}/dashboards/add to add a dummy item to dashboard` ))
         }
         console.log(d);
     }).catch(e => {
