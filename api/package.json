@@ -4,7 +4,8 @@
   "description": "Pair programming exercise for anaplan",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jest --runInBand",
+    "start": "node index.js"
   },
   "keywords": [
     "test",
@@ -19,5 +20,9 @@
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "supertest": "^4.0.2"
   }
 }

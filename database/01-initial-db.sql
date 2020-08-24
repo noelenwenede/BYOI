@@ -7,3 +7,6 @@ CREATE TABLE IF NOT EXISTS `dashboards` (
   `updatedAt` TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+INSERT INTO  dashboards (title) VALUES ("example");

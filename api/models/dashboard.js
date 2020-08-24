@@ -24,7 +24,6 @@ const Dashboard = sequelize.define('dashboard', {
 });
 
 // `sequelize.define` also returns the model
-console.log(Dashboard === sequelize.models.Dashboard); // true
 
 
 
